@@ -1,0 +1,193 @@
+:root {
+  --color-music-bg: #170f23;
+  --color-music-text: #eee;
+  --color-music-active: #7200a1;
+
+  --height-music-header: 280px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-image: url(https://tonghop.vn/wp-content/uploads/2020/06/maxresdefault.jpg);
+}
+
+.modal-music {
+  width: 300px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: var(--color-music-bg);
+  /* transform: translateX(100%); */
+  /* transition: all 0.8s ease; */
+  cursor: default;
+}
+
+.modal-music.show {
+  transform: translateX(0);
+}
+
+.music-container {
+  height: 100%;
+}
+
+.music__header {
+  height: var(--height-music-header);
+}
+
+.music__name {
+  color: var(--color-music-text);
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.music__CD-wrapper {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.music__CD {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-size: contain;
+}
+
+.music__controls-wrapper {
+  height: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin-left: -15px;
+}
+
+.music__controls-wrapper button {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+  transform: translateY(3px);
+  color: var(--color-music-text);
+  outline: none;
+  cursor: pointer;
+}
+
+.music__controls-wrapper button i {
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.music__controls-wrapper button i:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+button.play-pause-btn {
+  font-size: 35px;
+  transform: translate(-9px, -7px);
+  transition: ease 0.25s;
+}
+
+button.play-pause-btn:hover {
+  color: var(--color-music-active);
+}
+
+button.play-pause-btn i:hover {
+  background-color: transparent;
+}
+
+button.play-pause-btn .play-btn,
+button.play-pause-btn.playing .pause-btn {
+  display: block;
+}
+
+button.play-pause-btn .pause-btn,
+button.play-pause-btn.playing .play-btn {
+  display: none;
+}
+
+button.random-btn.active,
+button.loop-btn.active {
+  color: var(--color-music-active);
+}
+
+.progress-wrapper {
+  display: flex;
+  justify-content: center;
+  transform: translateY(50%);
+}
+
+.progress {
+  width: 80%;
+  cursor: pointer;
+}
+
+.music__body {
+  height: calc(100vh - var(--height-music-header));
+  overflow-y: auto;  
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.music__body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.music__body::-webkit-scrollbar {
+  display: none;
+}
+
+.music__playlist {
+  list-style: none;
+}
+
+.music__playlist li {
+  padding: 20px;
+  color: var(--color-music-text);
+  display: flex;
+  transition: background-color ease 0.2s;
+}
+
+.music__playlist li:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.music__playlist li.active {
+  background-color: var(--color-music-active);
+}
+
+.music__playlist-img {
+  min-width: 50px;
+  height: 50px;
+  align-self: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+}
+
+.music__playlist-details {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.music__playlist-title {
+  font-size: 16px;
+}
+
+.music__playlist-singer {
+  font-size: 12px;
+}
+

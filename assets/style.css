@@ -75,20 +75,12 @@ body {
   width: 20px;
   height: 20px;
   border: none;
+  margin: 16px 0 0 16px;
   background-color: transparent;
   transform: translateY(3px);
   color: var(--color-music-text);
   outline: none;
   cursor: pointer;
-}
-
-.music__controls-wrapper button i {
-  padding: 10px;
-  border-radius: 50%;
-}
-
-.music__controls-wrapper button i:hover {
-  background-color: rgba(255, 255, 255, 0.08);
 }
 
 button.play-pause-btn {
@@ -191,3 +183,9 @@ button.loop-btn.active {
   font-size: 12px;
 }
 
+/* RESPONSIVE */
+@media (max-width: 500px) {
+  .modal-music {
+    width: 100%;
+  }
+}

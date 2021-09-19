@@ -31,66 +31,66 @@ const musicApp = {
   songs: [
     {
       "id": 1,
-      "title": "Leave Before You Love Me",
-      "singer": "Marshmello, Jonas Brothers",
-      "path": "./db/songs_database/Leave-Before-You-Love-Me-Marshmello-Jonas-Brothers.mp3",
-      "img": "./db/thumbnails/leave_before_you_love_me.jpg"
+      "title": "Độ Tộc 2",
+      "singer": "Độ Mixi, Phúc Du, Pháo, Masew",
+      "path": "./db/songs_database/Do Toc 2 - Do Mixi_ Phuc Du_ Phao_ Masew.mp3",
+      "img": "https://avatar-ex-swe.nixcdn.com/song/share/2021/08/10/f/b/e/5/1628579602057.jpg"
     },
     {
       "id": 2,
-      "title": "End Of Time",
-      "singer": "K-391, Alan Walker, Ahrix",
-      "path": "./db/songs_database/End-of-Time-K-391-Alan-Walker-Ahrix.mp3",
-      "img": "./db/thumbnails/end_of_time.jpg"
+      "title": "Don't Go",
+      "singer": "Skrillex, Justin Bieber, Don",
+      "path": "./db/songs_database/Don_t Go - Skrillex_ Justin Bieber_ Don.mp3",
+      "img": "https://avatar-ex-swe.nixcdn.com/song/2021/08/20/f/c/f/e/1629439093883_640.jpg"
     },
     {
       "id": 3,
-      "title": "Beautiful Mistakes",
-      "singer": "Maroon5, Megan Thee Stallion",
-      "path": "./db/songs_database/Beautiful-Mistakes-Maroon-5-Megan-Thee-Stallion.mp3",
-      "img": "./db/thumbnails/beautiful_mistakes.jpg"
+      "title": "Lalisa",
+      "singer": "Lisa",
+      "path": "./db/songs_database/Lalisa - Lisa.mp3",
+      "img": "https://avatar-ex-swe.nixcdn.com/song/share/2021/09/10/3/9/c/0/1631247722289.jpg"
     },
     {
       "id": 4,
-      "title": "Wrap Me In Plastic",
-      "singer": "CHROMANCE, Marcus Layton",
-      "path": "./db/songs_database/Wrap-Me-In-Plastic-Marcus-Layton-Radio-Edit-CHROMANCE-Marcus-Layton.mp3",
-      "img": "./db/thumbnails/wrap_me_in_plastic.jpg"
+      "title": "Only",
+      "singer": "Lee Hi",
+      "path": "./db/songs_database/Only - Lee Hi.mp3",
+      "img": "https://avatar-ex-swe.nixcdn.com/song/2021/08/27/1/4/2/5/1630071516480_640.jpg"
     },
     {
       "id": 5,
-      "title": "Confetti",
-      "singer": "Little Mix, Saweetie",
-      "path": "./db/songs_database/Confetti-Little-Mix-Saweetie.mp3",
-      "img": "./db/thumbnails/confetti.jpg"
+      "title": "Running Out Of Roses",
+      "singer": "Alan Walker, Jami",
+      "path": "./db/songs_database/Running Out Of Roses - Alan Walker_ Jami.mp3",
+      "img": "https://avatar-ex-swe.nixcdn.com/playlist/2021/09/10/e/8/4/0/1631266564378_500.jpg"
     },
     {
       "id": 6,
-      "title": "On My Way",
-      "singer": "Alan Walker, Sabrina Carpenter, Farruko",
-      "path": "./db/songs_database/On-My-Way-Alan-Walker-Sabrina-Carpenter-Farruko.mp3",
-      "img": "./db/thumbnails/on_my_way.jpg"
+      "title": "Shivers",
+      "singer": "Ed Sheeran",
+      "path": "./db/songs_database/Shivers - Ed Sheeran.mp3",
+      "img": "https://avatar-ex-swe.nixcdn.com/song/2021/09/09/f/c/f/d/1631175994771_640.jpg"
     },
     {
       "id": 7,
-      "title": "Rewrite The Stars",
-      "singer": "James Arthur, Anne Marie",
-      "path": "./db/songs_database/Rewrite-The-Stars-James-Arthur-Anne-Marie.mp3",
-      "img": "./db/thumbnails/rewrite_the_stars.jpg"
+      "title": "Stay",
+      "singer": "The Kid LAROI, Justin Bieber",
+      "path": "./db/songs_database/Stay - The Kid LAROI_ Justin Bieber.mp3",
+      "img": "https://avatar-ex-swe.nixcdn.com/song/2021/07/09/5/5/8/2/1625815274622_500.jpg"
     },
     {
       "id": 8,
-      "title": "Slide Away",
-      "singer": "Miley Cyrus",
-      "path": "./db/songs_database/Slide-Away-Miley-Cyrus.mp3",
-      "img": "./db/thumbnails/slide_away.jpg"
+      "title": "Wrap Me In Plastic",
+      "singer": "CHROMANCE, Marcus Layton",
+      "path": "./db/songs_database/Wrap-Me-In-Plastic-Marcus-Layton-Radio-Edit-CHROMANCE-Marcus-Layton.mp3",
+      "img": "https://avatar-ex-swe.nixcdn.com/song/2020/12/02/9/c/a/1/1606899906741_640.jpg"
     },
     {
       "id": 9,
       "title": "Tomboy",
       "singer": "Destiny Rogers",
       "path": "./db/songs_database/Tomboy-Destiny-Rogers.mp3",
-      "img": "./db/thumbnails/tomboy.jpg"
+      "img": "https://avatar-ex-swe.nixcdn.com/playlist/2019/03/26/4/b/2/a/1553590465464_500.jpg"
     },
     {
       "id": 10,

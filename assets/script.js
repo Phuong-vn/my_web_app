@@ -157,7 +157,7 @@ const musicApp = {
     playlist.onclick = function(e) {
       let songChosen = e.target.closest(".music__playlist li:not(.active)");
       if (songChosen) {
-        _this.currentIndex = songChosen.getAttribute('data-index');
+        _this.currentIndex = songChosen.dataset.index;
         audio.setAttribute('src', _this.currentSong.path);
         _this.renderHeader();
         _this.activeCurrentSong();

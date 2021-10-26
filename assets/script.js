@@ -27,25 +27,26 @@ const nextBtn = $('.next-btn');
 const loopBtn = $('.loop-btn');
 const randomBtn = $('.random-btn');
 
+
 const musicApp = {
   songs: [
     {      
-      "title": "Độ Tộc 2",
-      "singer": "Độ Mixi, Phúc Du, Pháo, Masew",
-      "path": "./db/songs_database/Do Toc 2 - Do Mixi_ Phuc Du_ Phao_ Masew.mp3",
-      "img": "https://avatar-ex-swe.nixcdn.com/song/share/2021/08/10/f/b/e/5/1628579602057.jpg"
+      "title": "Ghost",
+      "singer": "Justin Bieber",
+      "path": "./db/songs_database/2159643__Ghost__Justin Bieber__320.mp3",
+      "img": "https://avatar-ex-swe.nixcdn.com/song/2021/03/20/f/4/3/3/1616228351535_640.jpg"
     },
     {      
-      "title": "Don't Go",
-      "singer": "Skrillex, Justin Bieber, Don",
-      "path": "./db/songs_database/Don_t Go - Skrillex_ Justin Bieber_ Don.mp3",
-      "img": "https://avatar-ex-swe.nixcdn.com/song/2021/08/20/f/c/f/e/1629439093883_640.jpg"
+      "title": "Lạc",
+      "singer": "Rhymastic",
+      "path": "./db/songs_database/Lac - Rhymastic.mp3",
+      "img": "https://avatar-ex-swe.nixcdn.com/singer/avatar/2019/10/01/d/7/6/8/1569917056188_600.jpg"
     },
     {      
-      "title": "Lalisa",
-      "singer": "Lisa",
-      "path": "./db/songs_database/Lalisa - Lisa.mp3",
-      "img": "https://avatar-ex-swe.nixcdn.com/song/share/2021/09/10/3/9/c/0/1631247722289.jpg"
+      "title": "Leave Before You Love Me",
+      "singer": "Marshmello ft Jonas Brother",
+      "path": "./db/songs_database/Leave-Before-You-Love-Me-Marshmello-Jonas-Brothers.mp3",
+      "img": "https://avatar-ex-swe.nixcdn.com/song/2021/05/21/c/1/6/7/1621571817629_640.jpg"
     },
     {      
       "title": "Only",
@@ -54,10 +55,10 @@ const musicApp = {
       "img": "https://avatar-ex-swe.nixcdn.com/song/2021/08/27/1/4/2/5/1630071516480_640.jpg"
     },
     {      
-      "title": "Running Out Of Roses",
-      "singer": "Alan Walker, Jami",
-      "path": "./db/songs_database/Running Out Of Roses - Alan Walker_ Jami.mp3",
-      "img": "https://avatar-ex-swe.nixcdn.com/playlist/2021/09/10/e/8/4/0/1631266564378_500.jpg"
+      "title": "Money",
+      "singer": "Lisa",
+      "path": "./db/songs_database/Money - Lisa.mp3",
+      "img": "https://ss-images.saostar.vn/w800/pc/1632303136281/saostar-wq06pq6j93h5lmpg.png"
     },
     {      
       "title": "Shivers",
@@ -66,10 +67,10 @@ const musicApp = {
       "img": "https://avatar-ex-swe.nixcdn.com/song/2021/09/09/f/c/f/d/1631175994771_640.jpg"
     },
     {      
-      "title": "Stay",
-      "singer": "The Kid LAROI, Justin Bieber",
-      "path": "./db/songs_database/Stay - The Kid LAROI_ Justin Bieber.mp3",
-      "img": "https://avatar-ex-swe.nixcdn.com/song/2021/07/09/5/5/8/2/1625815274622_500.jpg"
+      "title": "Strawberry moon",
+      "singer": "IU",
+      "path": "./db/songs_database/Strawberry Moon - IU.mp3",
+      "img": "https://fb-images.saostar.vn/wp700/pc/1634995055040/saostar-j2jk3ps6e9q4myie.jpg"
     },
     {      
       "title": "Wrap Me In Plastic",
@@ -84,10 +85,10 @@ const musicApp = {
       "img": "https://avatar-ex-swe.nixcdn.com/playlist/2019/03/26/4/b/2/a/1553590465464_500.jpg"
     },
     {      
-      "title": "Watermelon Sugar",
-      "singer": "Harry Styles",
-      "path": "./db/songs_database/Watermelon-Sugar-Harry-Styles.mp3",
-      "img": "https://avatar-ex-swe.nixcdn.com/song/2019/11/18/b/0/e/0/1574042256777_640.jpg"
+      "title": "Yêu 5",
+      "singer": "Rhymastic",
+      "path": "./db/songs_database/Yeu 5 - Rhymastic.mp3",
+      "img": "https://avatar-ex-swe.nixcdn.com/song/2017/11/27/7/d/1/c/1511770260582_640.jpg"
     }
   ],
 
@@ -110,23 +111,25 @@ const musicApp = {
     audio.setAttribute('src', this.currentSong.path);
     
     // Handle play/pause button on click -> audio play/pause
-    playBtn.onclick = () => _this.isPlaying ? audio.pause() : audio.play();   
+    playBtn.onclick = () => _this.isPlaying ? audio.pause() : audio.play();
 
-    // Handle audio on play -> play/pause button
+    // Handle audio on play -> play/pause button & spin CD
     audio.onplay = function () {
       _this.isPlaying = true;
       playBtn.classList.add('playing');
+      _this.CDThumbAnimate.play();
     }
-
-    // Handle audio on pause -> play/pause button
+    
+    // Handle audio on pause -> play/pause button & spin CD
     audio.onpause = function () {
       _this.isPlaying = false;
       playBtn.classList.remove('playing');
+      _this.CDThumbAnimate.pause();
     }
     
     // Handel audio on time update -> progress bar
     audio.ontimeupdate = function() {
-      progress.value = this.currentTime;
+      progress.value = (this.currentTime / audio.duration) * 100;
     }
     progress.onchange = function() {
       let seekTime = (this.value * audio.duration) / 100;
@@ -157,7 +160,7 @@ const musicApp = {
     playlist.onclick = function(e) {
       let songChosen = e.target.closest(".music__playlist li:not(.active)");
       if (songChosen) {
-        _this.currentIndex = songChosen.dataset.index;
+        _this.currentIndex = Number(songChosen.dataset.index);
         audio.setAttribute('src', _this.currentSong.path);
         _this.renderHeader();
         _this.activeCurrentSong();
@@ -168,10 +171,19 @@ const musicApp = {
     }
   },
 
+  // Spin the CD -> Object
+  CDThumbAnimate: cdThumb.animate([
+    {transform: "rotate(360deg)"}
+  ], {
+    duration: 10000,
+    iterations: Infinity
+  }),  
+
   renderHeader: function() {
     // Render header
     cdTitle.innerHTML = this.currentSong.title;
     cdThumb.setAttribute('style', `background-image: url(${this.currentSong.img})`);
+    this.isPlaying == true ? this.CDThumbAnimate.play() : this.CDThumbAnimate.pause();
   },
 
   renderPlaylist: function() {
@@ -232,7 +244,7 @@ const musicApp = {
       newIndex = Math.floor(Math.random() * this.songs.length)
     }
     this.currentIndex = newIndex;
-
+        
     // Playing    
     audio.setAttribute('src', this.currentSong.path);
     this.renderHeader();
@@ -256,5 +268,6 @@ const musicApp = {
     this.activeCurrentSong();
   }
 }
+console.log("🚀 ~ file: script.js ~ line 260 ~ musicApp", musicApp)
 
 musicApp.start();

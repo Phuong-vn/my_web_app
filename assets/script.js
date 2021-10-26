@@ -2,7 +2,7 @@
 1. Render playlist                    -->   CHECK
 2. Scroll                             -->   CHECK
 3. Play / Pause / Seek                -->   CHECK
-4. CD rotate                          -->   UNCHECK
+4. CD rotate                          -->   CHECK
 5. Next / prev                        -->   CHECK
 6. Random / Loop                      -->   CHECK
 7. Next / Loop when ended             -->   CHECK

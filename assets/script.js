@@ -183,7 +183,7 @@ const musicApp = {
     // Render header
     cdTitle.innerHTML = this.currentSong.title;
     cdThumb.setAttribute('style', `background-image: url(${this.currentSong.img})`);
-    this.isPlaying == true ? this.CDThumbAnimate.play() : this.CDThumbAnimate.pause();
+    this.isPlaying ? this.CDThumbAnimate.play() : this.CDThumbAnimate.pause();
   },
 
   renderPlaylist: function() {
@@ -268,6 +268,4 @@ const musicApp = {
     this.activeCurrentSong();
   }
 }
-console.log("🚀 ~ file: script.js ~ line 260 ~ musicApp", musicApp)
-
 musicApp.start();
